@@ -2,9 +2,11 @@ import java.util.Scanner;
 
 public class Main {
 	private static ISubscriber subscribers [] = {
-			new SimpleSubscriber(),
-			new ReallySimpleSubscriber(),
+			new SquareArea(),
 	};
+	
+	
+	
 	public static void main(String[] args) {
 		Topic mathTopic = new Topic();
 		for (ISubscriber sub : subscribers) {
@@ -12,6 +14,7 @@ public class Main {
 		}
 		Scanner sc = new Scanner(System.in);
 		String input = sc.next();
+		sc.close();
 		mathTopic.dispatchEvent(input);
 	}
 }

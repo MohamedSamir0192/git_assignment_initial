@@ -19,7 +19,7 @@ public class Topic {
 	
 	public void dispatchEvent(String input) {
 		for (ISubscriber sub : this.getSubscribers()) {
-			sub.notifySubscriber(input);
+			System.out.println(sub.returnPrintableName() + ": " + sub.notifySubscriber(input));
 		}
 	}
 }
